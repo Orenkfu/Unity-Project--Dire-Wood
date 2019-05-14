@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
+using RPG.Saving;
+
 namespace RPG.Cinematics {
-    public class CinematicTrigger : MonoBehaviour {
+    public class CinematicTrigger : MonoBehaviour, ISaveable {
         [SerializeField] string triggerTag = "Player";
         [SerializeField] int timesToTrigger = 1;
 
@@ -19,6 +21,14 @@ namespace RPG.Cinematics {
             cinematicsTriggered++;
             director.Play();
 
+        }
+
+        public void RestoreState(object state) {
+            cinematicsTriggered = (float)state;
+        }
+
+        public object CaptureState() {
+            return cinematicsTriggered;
         }
     }
 }

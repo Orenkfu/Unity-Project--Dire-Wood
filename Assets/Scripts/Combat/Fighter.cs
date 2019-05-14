@@ -6,15 +6,19 @@ namespace RPG.Combat {
     [RequireComponent(typeof(Health))]
     public class Fighter : MonoBehaviour, IAction {
         Health target;
-        [SerializeField] float weaponRange = 2f;
-        [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] float baseDamage = 8f;
+        [SerializeField] Transform hand;
+        [SerializeField] Weapon defaultWeapon;
+        private Weapon currentWeapon;
         Animator animator;
         Mover moveController;
         private float timeSinceLastAttack = 0f;
-        void Start() {
+        void Awake() {
             animator = GetComponent<Animator>();
             moveController = GetComponent<Mover>();
+        }
+        void Start() {
+            EquipWeapon(defaultWeapon);
+            
         }
         public void Attack(GameObject target) {
             animator.ResetTrigger("stopAttack");
@@ -22,14 +26,19 @@ namespace RPG.Combat {
             setTarget(target.GetComponent<Health>());
         }
 
+        public void EquipWeapon(Weapon weapon) {
+            currentWeapon = weapon;
+            weapon.Equip(hand, animator);
+        }
+
 
         void Update() {
             timeSinceLastAttack += Time.deltaTime;
             if (!CanAttack(target)) return;
-            bool isInWeaponRange = Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            bool isInWeaponRange = Vector3.Distance(transform.position, target.transform.position) < currentWeapon.range;
             if (!isInWeaponRange) {
                 moveController.MoveTo(target.transform.position, 1f);
-            } else if (timeSinceLastAttack >= timeBetweenAttacks) {
+            } else if (timeSinceLastAttack >= currentWeapon.attackSpeed) {
                 AttackBehaviour();
             }
         }
@@ -48,7 +57,7 @@ namespace RPG.Combat {
         //An animation event!
         void Hit() {
             if (target == null) return;
-            target.TakeDamage(baseDamage);
+            target.TakeDamage(currentWeapon.Damage);
         }
         public void Cancel() {
             animator.ResetTrigger("attack");

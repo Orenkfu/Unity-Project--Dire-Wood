@@ -25,6 +25,7 @@ namespace RPG.Saving {
             foreach (var saveable in GetComponents<ISaveable>()) {
                 var type = saveable.GetType().ToString();
                 if (stateDict.ContainsKey(type)) {
+                    print(stateDict[type]);
                     saveable.RestoreState(stateDict[type]);
                 }
             }

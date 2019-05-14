@@ -6,25 +6,33 @@ namespace RPG.Core {
     public class Health : MonoBehaviour, ISaveable {
 
         [SerializeField] float maxHealth = 100f;
-        private float currentHealth;
+        [SerializeField] private float currentHealth;
         private bool _isDead = false;
 
         public delegate void OnCharacterDeath();
         public event OnCharacterDeath notifyDeathObservers;
+        public delegate void OnDamageTaken(float damage);
+        public event OnDamageTaken notifyDamageObservers;
 
+        public float CurrentHealth { get { return currentHealth;  } }
+        public float MaxHealth { get { return maxHealth; } }
         public bool isDead { get { return _isDead; } set { _isDead = value; } }
+        private bool isRestored = false;
         void Awake () {
             notifyDeathObservers += OnDeath;
 
         }
         void Start() {
-            currentHealth = maxHealth;
-
+            if (!isRestored) {
+                currentHealth = MaxHealth;
+            }
         }
 
         public void TakeDamage(float damage) {
             if (_isDead) return;
             currentHealth = Mathf.Max(currentHealth - damage, 0);
+            //notifyDamageObservers(damage);
+
             if (currentHealth <= 0)
                 Die();
         }
@@ -50,19 +58,27 @@ namespace RPG.Core {
         }
 
         public void RestoreState(object state) {
+            isRestored = true;
             var healthDict = (Dictionary<string, object>)state;
-            currentHealth = healthDict["currentHealth"] == null ? maxHealth : (float)healthDict["currentHealth"];
-            if (currentHealth <= 0) {
+            print(healthDict["currentHealth"]);
+            if ((bool)healthDict["isDead"]) {
+                print("Restoring dead character: " + gameObject);
                 Die();
+            }
+            currentHealth = (float)healthDict["currentHealth"];
+            if (currentHealth == 0) {
+                currentHealth = MaxHealth;
             }
 
         }
 
         public object CaptureState() {
+            
             var healthDict = new Dictionary<string, object>();
             healthDict["currentHealth"] = currentHealth;
+            healthDict["isDead"] = isDead;
             return healthDict;
-
+            
         }
     }
 }

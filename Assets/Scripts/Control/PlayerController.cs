@@ -5,83 +5,65 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Core;
+using RPG.Interaction;
 
 namespace RPG.Control {
     public class PlayerController : MonoBehaviour {
 
-        private Mover movementController;
+        private Mover mover;
         private Fighter fighter;
         private bool controlEnabled = true;
         private MouseController mouse;
+        private Interacter interacter;
 
+
+        void Awake() {
+
+            interacter = GetComponent<Interacter>();
+            mover = GetComponent<Mover>();
+            fighter = GetComponent<Fighter>();
+        }
         void Start() {
             mouse = Camera.main.GetComponent<MouseController>();
             mouse.notifyEnemyObservers += OnTargetHover;
             mouse.notifyWalkableObservers += OnWalkableHover;
+            mouse.notifyInteractableObservers += OnInteractableHover;
             GetComponent<Health>().notifyDeathObservers += OnDeath;
-            movementController = GetComponent<Mover>();
-            fighter = GetComponent<Fighter>();
-
-
         }
+
         void OnDeath () {
             Destroy(this);
         }
         void Update() {
-            if (!controlEnabled)
-                return;
-
-            //MouseRaycast();
         }
 
         void OnTargetHover(CombatTarget target) {
+            if (!controlEnabled)
+                return;
             if (!fighter.CanAttack(target.gameObject)) return;
             if (Input.GetMouseButton(0)) {
+                interacter.Target = null;
                 fighter.Attack(target.gameObject);
             }
         }
-        void OnWalkableHover(Vector3 destination) {
-            if (Input.GetMouseButton(0)) {
-                fighter.setTarget(null);
-                movementController.StartMove(destination, 1f);
-            }
-        }
-        private void MouseRaycast() {
-            RaycastHit[] rayHits = Physics.RaycastAll(getMouseRay());
-            var interactionSuccessful = TryInteractWithCombat(rayHits);
-            if (interactionSuccessful) return;
-            interactionSuccessful = TryInteractWithMovement(rayHits);
-            if (interactionSuccessful) return;
-           
-            //out of game bounds
-            //print("Found nothing...");
-        }
-    
-        private bool TryInteractWithCombat(RaycastHit[] hits) {
-            foreach (RaycastHit hit in hits) {
-                var target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null) continue;
 
-                if (!fighter.CanAttack(target.gameObject)) continue;
-                if (Input.GetMouseButton(0)) {
-                    fighter.Attack(target.gameObject);
-                }
-                    return true;
+        void OnInteractableHover(Interactable interactable) {
+            if (!controlEnabled)
+                return;
+            
+            if (Input.GetMouseButton(0)) {
+                interacter.Target = interactable;
+                //interactable.Interact();
             }
-            return false;
         }
-        private bool TryInteractWithMovement(RaycastHit[] rayHits) {
-            if (rayHits.Length > 0) {
-                if (Input.GetMouseButton(0)) {
-                    fighter.setTarget(null);
-                    movementController.StartMove(rayHits[rayHits.Length - 1].point, 1f);
-                }
-                return true;
+        void OnWalkableHover(Vector3 destination) {
+            if (!controlEnabled)
+                return;
+            if (Input.GetMouseButton(0)) {
+                interacter.Target = null;
+                fighter.setTarget(null);
+                mover.StartMove(destination, 1f);
             }
-            return false;
-        }
-        private static Ray getMouseRay() {
-            return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
 
         public void EnableControl () {

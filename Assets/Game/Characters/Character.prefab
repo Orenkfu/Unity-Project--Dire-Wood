@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
 --- !u!114 &7019470195821069150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,9 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a0d6396f021834e91548a923833d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRange: 2
-  timeBetweenAttacks: 1
-  baseDamage: 8
+  hand: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: d6b79a95664a82e4aa414295ef27deab, type: 2}
 --- !u!114 &1861199059396599189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +182,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e5a697ecc84f547acad3d7355ceac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueIdentifer: 

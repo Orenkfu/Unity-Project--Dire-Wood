@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &180409466405844386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6581952280733774521}
+  m_Layer: 0
+  m_Name: Bastard Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6581952280733774521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180409466405844386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 482832}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6860518640119394294
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6581952280733774521}
+    m_Modifications:
+    - target: {fileID: 7280766130853405762, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_GreatSword_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.103
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.61425877
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.39856687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.44584337
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5148342
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -16.086
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 94.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -99.11301
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51a52106770f60d47bd11872f28301a6, type: 3}
+--- !u!4 &482832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6860518640119476710, guid: 51a52106770f60d47bd11872f28301a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6860518640119394294}
+  m_PrefabAsset: {fileID: 0}

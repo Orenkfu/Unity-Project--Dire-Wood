@@ -28,8 +28,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3985172781670898702}
-  m_LocalRotation: {x: 0.47519404, y: 0.49768886, z: -0.32694417, w: 0.64776856}
-  m_LocalPosition: {x: -34.67567, y: 20.229778, z: -29.911465}
+  m_LocalRotation: {x: 0.45781913, y: 0.5368492, z: -0.44928187, w: 0.54803324}
+  m_LocalPosition: {x: -108.09837, y: 17.715487, z: -109.34998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 10
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   walkCursor: {fileID: 2800000, guid: 0512d6f841d345744b22d9c6f58f2462, type: 3}
   interactCursor: {fileID: 2800000, guid: 913df4190fee777438ef07887e256146, type: 3}
   enemyCursor: {fileID: 2800000, guid: 913df4190fee777438ef07887e256146, type: 3}
+  noInteractCursor: {fileID: 2800000, guid: 4057f337fb406a14db52b34704b99177, type: 3}
   cursorHotspot: {x: 0, y: 0}
 --- !u!81 &3985172781670898700
 AudioListener:

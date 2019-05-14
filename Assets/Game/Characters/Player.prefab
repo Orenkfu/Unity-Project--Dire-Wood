@@ -26,10 +26,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20f57eb1763fb0428ace7040e528fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkCursor: {fileID: 2800000, guid: 0512d6f841d345744b22d9c6f58f2462, type: 3}
-  interactCursor: {fileID: 0}
-  enemyCursor: {fileID: 2800000, guid: 37a67f3fc12d5044fb255665a3f8a398, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+--- !u!114 &204301718741085472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025449774857871464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede56b13ff02bce45a63a8ce82038da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDistance: 0
 --- !u!1001 &4950458116272388654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,11 +121,27 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7876516369169979977, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
     - target: {fileID: 8490568677906985025, guid: 991adc2e5afc5ba46997b64569be9544,
         type: 3}
       propertyPath: baseDamage
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8490568677906985025, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 7244570806207671541}
+    - target: {fileID: 8490568677906985025, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 85ff8a0f13d46a74d94958ab5e4d3ca7,
+        type: 2}
     - target: {fileID: 8725038445184197864, guid: 991adc2e5afc5ba46997b64569be9544,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -151,6 +176,10 @@ PrefabInstance:
     - target: {fileID: 133518, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
       propertyPath: m_Name
       value: Character_Knights_Soldier_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 133518, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 417656, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,5 +229,33 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bfbe2e8b331e2cc42be1591f949c0e41, type: 2}
+    - target: {fileID: 7153516111267126305, guid: 30cf93deff988e74e88a144bd2127c18,
+        type: 3}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 9058da40a84ba294dab5fd0f1494e7ec,
+        type: 2}
+    - target: {fileID: 7153516111267126305, guid: 30cf93deff988e74e88a144bd2127c18,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 7244570806207429895}
+    - target: {fileID: 7153516111267126305, guid: 30cf93deff988e74e88a144bd2127c18,
+        type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 3025449774857871464}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!1 &7244570806207429895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 173820, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 7244570806207519739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7244570806207671541 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 7244570806207519739}
+  m_PrefabAsset: {fileID: 0}
