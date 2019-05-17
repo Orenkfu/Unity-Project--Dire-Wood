@@ -17,13 +17,24 @@ namespace RPG.Control {
 
         private float timeSincePlayerLastSeen = Mathf.Infinity;
 
-        void Start() {
+        void Awake () {
             startPosition = transform.position;
-            player = GameObject.FindGameObjectWithTag("Player");
-            GetComponent<Health>().notifyDeathObservers += OnDeath;
             fighter = GetComponent<Fighter>();
             moveController = GetComponent<Mover>();
             patrolBehaviour = GetComponent<PatrolState>();
+
+        }
+
+        void Start() {
+            player = GameObject.FindGameObjectWithTag("Player");
+            var health = GetComponent<Health>();
+            health.notifyDeathObservers += OnDeath;
+            health.notifyDamageObservers += OnDamageTaken;
+        }
+
+        void OnDamageTaken(float damage) {
+            print(chaseDistance);
+            chaseDistance = Vector3.Distance(transform.position, player.transform.position) + 2f;
         }
         void OnDeath() {
             Destroy(this);

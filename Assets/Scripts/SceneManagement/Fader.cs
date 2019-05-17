@@ -26,7 +26,7 @@ namespace RPG.SceneManagement {
         }
         public IEnumerator FadeOut(float time) {
             while (1 - canvasGroup.alpha > Mathf.Epsilon) {
-                canvasGroup.alpha += Time.deltaTime / time;
+                canvasGroup.alpha +=  Time.deltaTime / time;
                 yield return null;
             }
         }

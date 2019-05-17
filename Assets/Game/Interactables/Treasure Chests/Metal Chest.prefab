@@ -88,6 +88,10 @@ GameObject:
   - component: {fileID: 7997863942913482676}
   - component: {fileID: 5250368953040140283}
   - component: {fileID: 6856009406080760469}
+  - component: {fileID: 4034205093381970027}
+  - component: {fileID: 7246657483448580231}
+  - component: {fileID: 9213936415438597175}
+  - component: {fileID: 7993806549201466091}
   m_Layer: 0
   m_Name: Metal Chest
   m_TagString: Untagged
@@ -155,3 +159,61 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4034205093381970027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437831754174748360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef10e50d2de7f7645b615629d1594ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorIcon: {fileID: 2800000, guid: 573a515fb1427dd4d855b8885a2d3a4b, type: 3}
+--- !u!95 &7246657483448580231
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437831754174748360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5fad2d3191fb45449ef803aebf02a91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &9213936415438597175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437831754174748360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2738129, y: 0.879218, z: 0.75627774}
+  m_Center: {x: 0.0012313122, y: 0.4396097, z: -0.016651481}
+--- !u!114 &7993806549201466091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437831754174748360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e5a697ecc84f547acad3d7355ceac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifer: 

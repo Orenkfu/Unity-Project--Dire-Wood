@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7110101541698741364}
   - component: {fileID: 7110101541698741367}
   - component: {fileID: 7110101541698741366}
+  - component: {fileID: 549015664631986956}
   m_Layer: 2
   m_Name: Intro Sequence
   m_TagString: Untagged
@@ -130,3 +131,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerTag: Player
   timesToTrigger: 1
+--- !u!114 &549015664631986956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110101541698741354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2406faecadae24f866cf3a6985b7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -25,6 +25,9 @@ namespace RPG.Control {
         }
 
         void Update() {
+            if (!MouseWithinScreenBounds()) {
+                return;
+            }
             RaycastHit[] rayHits = Physics.RaycastAll(getMouseRay());            
             foreach (var hit in rayHits) {
 
@@ -49,6 +52,9 @@ namespace RPG.Control {
             } else {
                 SetCursor(noInteractCursor);
             }
+        }
+        private bool MouseWithinScreenBounds() {
+            return new Rect(0, 0, Screen.width, Screen.height).Contains(Input.mousePosition);
         }
 
         private void SetCursor(Texture2D texture) {

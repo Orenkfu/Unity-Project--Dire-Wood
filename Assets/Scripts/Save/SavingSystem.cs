@@ -27,6 +27,7 @@ namespace RPG.Saving {
             SaveFile(filename, state);
         }
         public void Load(string saveFile) {
+            print("Loading..");
             RestoreState(LoadFile(saveFile));
         }
 

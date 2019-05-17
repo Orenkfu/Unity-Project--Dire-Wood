@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RPG.Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace RPG.Interaction {
@@ -8,7 +9,8 @@ namespace RPG.Interaction {
         [SerializeField] private Texture2D cursorIcon = null;
 
         public void Interact(Interacter interacter) {
-            throw new System.NotImplementedException();
+            interacter.GetComponent<Health>().TakeDamage(-10f);
+            Destroy(gameObject);
         }
 
         void Start() {

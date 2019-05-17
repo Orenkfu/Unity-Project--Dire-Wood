@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 namespace RPG.Core {
+
+
     public class ObjectPersistenceManager : MonoBehaviour {
         static bool hasSpawned = false;
         static ObjectPersistenceManager instance = null;
@@ -19,7 +21,7 @@ namespace RPG.Core {
           
           
         }
-
+   
         void Update() {
 
         }

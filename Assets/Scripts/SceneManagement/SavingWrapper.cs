@@ -9,27 +9,42 @@ namespace RPG.SceneManagement {
         const string DEFAULT_SAVE_FILE = "default";
         private SavingSystem savingSystem;
         [SerializeField] float fadeTime = 1.5f;
-
+        Fader fader;
         void Awake () {
             savingSystem = GetComponent<SavingSystem>();
         }
         IEnumerator Start() {
-            Fader fader = FindObjectOfType<Fader>();
+            print("Loading Saving Wrapper!");
+            print("Fade time.." + fadeTime);
+            fader = FindObjectOfType<Fader>();
             fader.FadeOutImmediate();
-            yield return savingSystem.LoadLastScene(DEFAULT_SAVE_FILE);
             yield return fader.FadeIn(fadeTime);
         }
+
         void Update() {
+            if (!fader) {
+                fader = FindObjectOfType<Fader>();
+            }
             if (Input.GetKeyDown(KeyCode.S))
                 Save();
             if (Input.GetKeyDown(KeyCode.L))
-                Load();
+                 StartCoroutine(Continue());
+                    //Load();
+        }
+        public IEnumerator Continue () {
+            print("Continuing..");
+            yield return fader.FadeOut(fadeTime);
+            yield return savingSystem.LoadLastScene(DEFAULT_SAVE_FILE);
+            yield return new WaitForSeconds(fadeTime);
+            yield return fader.FadeIn(fadeTime);
         }
         public void Save () {
+            print("Saving..");
             savingSystem.Save(DEFAULT_SAVE_FILE);
 
         }
         public void Load () {
+            StartCoroutine(fader.FadeIn(fadeTime));
             savingSystem.Load(DEFAULT_SAVE_FILE);
 
         }

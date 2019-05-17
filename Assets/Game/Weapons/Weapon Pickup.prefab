@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8395559306135670227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8256269328780210814}
+  - component: {fileID: 1382507895042391992}
+  - component: {fileID: 1551241165610062765}
+  m_Layer: 0
+  m_Name: Weapon Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8256269328780210814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395559306135670227}
+  m_LocalRotation: {x: -0, y: -0, z: -0.6901124, w: 0.72370225}
+  m_LocalPosition: {x: -0.34001, y: -0.078209, z: -0.065286}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.27801}
+--- !u!114 &1382507895042391992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395559306135670227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8896ff6c22a01458957d68226ee6a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorIcon: {fileID: 2800000, guid: 74f49d5fba4ceda418681ec5f093e457, type: 3}
+  weapon: {fileID: 11400000, guid: 447766304e0584a4f9aedd01d02adba0, type: 2}
+--- !u!65 &1551241165610062765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395559306135670227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08310891, y: 0.93943703, z: 0.4879017}
+  m_Center: {x: -0.00000095337276, y: 0.18499386, z: 0.061328173}

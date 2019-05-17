@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3060555921580073441}
   - component: {fileID: 3060555921580073375}
   - component: {fileID: 7266784544831533017}
+  - component: {fileID: 5509668746222675986}
   m_Layer: 2
   m_Name: Scene Portal
   m_TagString: Untagged
@@ -75,10 +76,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192392da35a816849bcf07a7b7b83fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 0
   spawnPoint: {fileID: 975523088756989082}
   identifier: 0
   destination: 0
+--- !u!114 &5509668746222675986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060555921580073442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f422e23af983ea94a90d2d62717f561d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: -1
+  fadeOutTime: 2
+  fadeInTime: 2
+  fadeWaitTime: 1
 --- !u!1 &7509891045291729612
 GameObject:
   m_ObjectHideFlags: 0

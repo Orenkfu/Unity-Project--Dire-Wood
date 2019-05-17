@@ -11,14 +11,19 @@ namespace RPG.Movement {
 
         [SerializeField] float maxMovespeed = 10f;
         [SerializeField] float movespeed = 6f;
+        Health health;
 
+        void Awake () {
+            health = GetComponent<Health>();
+           
+        }
         void Start() {
+            if (health)
+                health.notifyDeathObservers += OnDeath;
             animator = GetComponent<Animator>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             navMeshAgent.enabled = true;
-            var health = GetComponent<Health>();
-            if (health)
-                health.notifyDeathObservers += OnDeath;
+            
         }
 
         void OnDeath () {
@@ -29,6 +34,7 @@ namespace RPG.Movement {
         void Update() {
 
             Animate();
+         
         }
    
         private void Animate() {
@@ -40,6 +46,7 @@ namespace RPG.Movement {
             navMeshAgent.isStopped = true;
         }
         public void StartMove(Vector3 destination, float speedFraction) {
+           
             GetComponent<ActionScheduler>().StartAction(this);
             MoveTo(destination, speedFraction);
         }
@@ -49,6 +56,9 @@ namespace RPG.Movement {
             navMeshAgent.speed = Mathf.Clamp(movespeed * speedFraction, 0, maxMovespeed);
         }
         public void MoveTo(Vector3 destination, float speedFraction) {
+            //TODO: Permanently fix the bug where restoring state occurs before object initialization so death event is not triggered
+            if (health && health.isDead)
+                return;
             SetMovespeed(speedFraction);
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(destination);
@@ -58,6 +68,7 @@ namespace RPG.Movement {
             SerializableVector3 position = (SerializableVector3)state;
             //GetComponent<NavMeshAgent>().enabled = false;
             transform.position = position.ToVector3();
+            print("Restoring " + gameObject + "to position: " + state);
             //GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }

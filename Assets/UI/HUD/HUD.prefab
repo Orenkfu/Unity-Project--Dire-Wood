@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 3382693378649577849}
   - component: {fileID: 3453970308194560460}
   - component: {fileID: 3201998865185173839}
-  - component: {fileID: 1253685390432508283}
+  - component: {fileID: 3143080452173323325}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &1253685390432508283
+--- !u!114 &3143080452173323325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

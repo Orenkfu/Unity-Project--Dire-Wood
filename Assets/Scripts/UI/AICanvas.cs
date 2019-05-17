@@ -20,6 +20,8 @@ namespace RPG.UI {
             transform.LookAt(transform.position + camTranform.rotation * Vector3.forward,
              camTranform.rotation * Vector3.up);
             healthBar.fillAmount = health.CurrentHealth / health.MaxHealth;
+            if (health.isDead)
+                Destroy(gameObject);
         }
     }
 }

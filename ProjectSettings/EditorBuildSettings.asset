@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Hollow Pass/Hollow Pass.unity
-    guid: 54a7a6368c4b0dc418828f2cc233de79
+    path: Assets/Scenes/Main Menu/Main Menu.unity
+    guid: ab1dd36a78d6f3b4e835bc727b56608b
   - enabled: 1
     path: Assets/Scenes/Chaotic Sandbox/Chaotic Sandbox.unity
     guid: 75964a42a29acfc47a17c5d02d52a1d2
   - enabled: 1
+    path: Assets/Scenes/Hollow Pass/Hollow Pass.unity
+    guid: 54a7a6368c4b0dc418828f2cc233de79
+  - enabled: 1
     path: Assets/Scenes/The Village/Village In The Forest.unity
     guid: cafdd4840617bd54cb34da0555fb53ec
+  - enabled: 1
+    path: Assets/Scenes/Down Under/Underloft.unity
+    guid: 594cc489a25014a42a01f7514ba0055d
   m_configObjects: {}

@@ -20,6 +20,7 @@ namespace RPG.Core {
         private bool isRestored = false;
         void Awake () {
             notifyDeathObservers += OnDeath;
+            notifyDamageObservers += EvaluateDeath;
 
         }
         void Start() {
@@ -31,8 +32,11 @@ namespace RPG.Core {
         public void TakeDamage(float damage) {
             if (_isDead) return;
             currentHealth = Mathf.Max(currentHealth - damage, 0);
-            //notifyDamageObservers(damage);
+            notifyDamageObservers(damage);
+        }
 
+        //mostly exists so event emitted will never be null..
+        void EvaluateDeath (float damage) {
             if (currentHealth <= 0)
                 Die();
         }
@@ -45,10 +49,18 @@ namespace RPG.Core {
             notifyDeathObservers();
      
         }
+        private IEnumerator AsyncNotifyDeathObservers () {
+            yield return null;
+            notifyDeathObservers();
+        }
         void OnDeath () {
             GetComponent<Animator>().SetTrigger("death");
+            var collider = GetComponent<CapsuleCollider>();
+            if (collider) {
+                Destroy(collider);
+            }
             //TODO: replace this with permanent solution
-            Invoke("Dispose", 7f);
+           // Invoke("Dispose", 7f);
         }
         void Dispose() {
             Destroy(gameObject);
@@ -60,7 +72,6 @@ namespace RPG.Core {
         public void RestoreState(object state) {
             isRestored = true;
             var healthDict = (Dictionary<string, object>)state;
-            print(healthDict["currentHealth"]);
             if ((bool)healthDict["isDead"]) {
                 print("Restoring dead character: " + gameObject);
                 Die();

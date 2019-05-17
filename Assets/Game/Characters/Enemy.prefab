@@ -201,6 +201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7876516369169979974, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8724347951977065468, guid: 991adc2e5afc5ba46997b64569be9544,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -261,6 +266,11 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7876516369169979975, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7876516369169979976, guid: 991adc2e5afc5ba46997b64569be9544,
         type: 3}
       propertyPath: movespeed
@@ -277,6 +287,21 @@ PrefabInstance:
       propertyPath: hand
       value: 
       objectReference: {fileID: 8364806178532992500}
+    - target: {fileID: 8490568677906985025, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 8364806178532992500}
+    - target: {fileID: 8490568677906985025, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 8364806178532918684}
+    - target: {fileID: 8943803355589691686, guid: 991adc2e5afc5ba46997b64569be9544,
+        type: 3}
+      propertyPath: bodyCenter
+      value: 
+      objectReference: {fileID: 8364806178532949924}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991adc2e5afc5ba46997b64569be9544, type: 3}
 --- !u!1 &836709325676271472 stripped
@@ -348,6 +373,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+--- !u!4 &8364806178532949924 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 414676, guid: 679ff741e12a7e740819ede24a7000b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8364806178533059696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8364806178532918684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403948, guid: 679ff741e12a7e740819ede24a7000b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8364806178533059696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8364806178532992500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7,

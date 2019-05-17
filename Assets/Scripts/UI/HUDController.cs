@@ -11,10 +11,8 @@ public class HUDController : MonoBehaviour {
     GameObject player;
     //Energy playerEnergy;
     void Start() {
-        print("Started HUD controller.");
         player = GameObject.FindWithTag("Player");
-
-
+        
     }
 
     private float HealthAsPercentage() {
